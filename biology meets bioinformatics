@@ -1,0 +1,22 @@
+def SkewArray(Genome):
+    skew = [0] 
+    n = len(Genome)
+    for i in range(n):
+        if Genome[i] == "C":
+            skew.append(skew[i] - 1)
+        elif Genome[i] == "G":
+            skew.append(skew[i] + 1)
+        else:
+            skew.append(skew[i])
+    return skew
+
+    
+#This Python function, SkewArray, takes a genomic sequence Genome as input and calculates the skewness array for that sequence. 
+Skewness is a measure of the relative abundance of guanine (G) and cytosine (C) nucleotides along the DNA sequence :
+Initializes an empty list skew with the value [0]. This list will store the skewness values for each position in the genome.
+Computes the length of the genome and iterates through each nucleotide position in the genome.
+At each position:
+If the nucleotide is "C", it decreases the skewness value by 1 compared to the previous position and appends this new value to the skew list.
+If the nucleotide is "G", it increases the skewness value by 1 compared to the previous position and appends this new value to the skew list.
+If the nucleotide is neither "C" nor "G" (i.e., it's "A" or "T"), it appends the same skewness value as the previous position to the skew list.
+Returns the computed skewness array.
